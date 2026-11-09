@@ -71,105 +71,36 @@
     }
 
     .resource-bar{
-      width:min(620px,100%);
       display:grid;
-      grid-template-columns:1fr;
-      gap:10px;
-      align-items:start;
-      border:1px solid #6f5526;
-      background:
-        linear-gradient(135deg,rgba(212,166,74,.09),transparent 48%),
-        linear-gradient(180deg,#171b1f,#111417);
+      grid-template-columns:minmax(0,1fr) 240px;
+      gap:18px;
+      align-items:center;
+      border:1px solid #4a3a1f;
+      background:linear-gradient(180deg,#171b1f,#111417);
       border-radius:14px;
       padding:15px 18px;
       box-shadow:var(--shadow);
       margin-bottom:18px;
-      position:relative;
     }
-    .resource-bar:before{
-      content:"1";
-      position:absolute;
-      top:-10px;
-      left:-10px;
-      width:30px;
-      height:30px;
-      display:grid;
-      place-items:center;
-      border-radius:50%;
-      background:linear-gradient(180deg,#efc66b,#c99538);
-      color:#1c1307;
-      border:1px solid #f3d483;
-      font-weight:900;
-      box-shadow:0 5px 14px rgba(212,166,74,.16);
-    }
-    .resource-title{font-weight:800;color:#f0dfb6;font-size:1rem}
+    .resource-title{font-weight:800;color:#f0dfb6}
     .resource-help{font-size:.84rem;color:var(--muted);margin-top:3px}
     .resource-input{
-      width:230px;
+      width:240px;
       justify-self:start;
-    }
-    .resource-note{
-      margin-top:4px;
-      font-size:.76rem;
-      color:#d8c088;
     }
     .how-it-works{
       margin-bottom:18px;
       border:1px solid #42361f;
       background:linear-gradient(180deg,rgba(212,166,74,.055),rgba(18,22,26,.96));
       border-radius:12px;
-      padding:14px 16px;
+      padding:11px 14px;
       color:#d8dde2;
       font-size:.86rem;
-      line-height:1.55;
+      line-height:1.5;
     }
-    .how-title{
-      display:block;
-      margin-bottom:6px;
-      color:#f0d18c;
-      font-weight:800;
-    }
-    .how-line{
-      margin-top:2px;
-      color:#d8dde2;
-    }
-    .how-example{
-      margin-top:4px;
-      color:#ffffff !important;
-      font-weight:400 !important;
-    }
-    .how-example,
-    .how-example span,
-    .how-example strong{
-      color:#ffffff !important;
-      font-weight:400 !important;
-      -webkit-text-fill-color:#ffffff !important;
-    }
-    .how-economy{
-      margin-top:4px;
-      color:#f0d18c;
-      font-weight:800;
-    }
+    .how-it-works strong{color:#f0d18c}
 
-    .main-grid:before{
-      content:"2";
-      position:absolute;
-      top:-10px;
-      left:-10px;
-      width:30px;
-      height:30px;
-      display:grid;
-      place-items:center;
-      border-radius:50%;
-      background:linear-gradient(180deg,#efc66b,#c99538);
-      color:#1c1307;
-      border:1px solid #f3d483;
-      font-weight:900;
-      box-shadow:0 5px 14px rgba(212,166,74,.16);
-      z-index:3;
-    }
-
-.panel{
+    .panel{
       border:1px solid var(--border);
       background:linear-gradient(180deg,var(--panel),#0f1215);
       border-radius:var(--radius);
@@ -180,7 +111,6 @@
     .panel h2,.panel h3{margin:0;color:#f1e5c6}
     .sub{color:var(--muted);font-size:.92rem;margin-top:.3rem}
     .main-grid{
-      position:relative;
       display:grid;
       grid-template-columns:minmax(0,1fr) 92px minmax(0,1fr);
       gap:16px;
@@ -235,7 +165,6 @@
       vertical-align:2px;
     }
     .cards{display:grid;gap:12px}
-    .card.paired-height{box-sizing:border-box}
     .card{
       border:1px solid #3b3a34;
       background:linear-gradient(180deg,var(--card2),var(--card));
@@ -274,8 +203,7 @@
       align-items:stretch;
     }
     .data-grid.donor{grid-template-columns:minmax(0,1.3fr) minmax(150px,.7fr)}
-    .data-grid.receiver{grid-template-columns:minmax(110px,150px)}
-    .data-grid.receiver-simple{justify-content:start}
+    .data-grid.receiver{grid-template-columns:minmax(0,1.3fr) minmax(150px,.7fr) minmax(110px,.45fr)}
     .data-box{
       border:1px solid #3a4147;
       background:#12171b;
@@ -424,7 +352,7 @@
       .hero{padding:18px}
       .hero-top{flex-direction:column}
       .lang-switch{align-self:flex-end}
-      .resource-bar{width:100%;align-items:stretch}
+      .resource-bar{grid-template-columns:1fr;align-items:stretch}
       .resource-input{width:100%;justify-self:stretch}
       .row{align-items:stretch;flex-direction:column}
       .btn.remove{align-self:flex-end}
@@ -448,32 +376,26 @@
     </div>
   </header>
 
-  <div id="uiHowItWorks" class="how-it-works">
-    <span class="how-title">Explications</span>
-    <div class="how-line">Seules les compétences déjà acquises sont transférées.</div>
-    <div class="how-line">Si vous disposez de fragments dédiés au héros dont vous souhaitez transférer les compétences, utilisez-les avant le transfert. Vous pouvez compléter si nécessaire avec des fragments légendaires universels.</div>
-    <div class="how-line">Utiliser les fragments dédiés avant le transfert permet d’économiser des fragments légendaires universels.</div>
-    <div class="how-example">Exemple : pour une amélioration coûtant 80 fragments, si vous avez 35 fragments dédiés, utilisez 35 dédiés + 45 légendaires au lieu de 80 fragments légendaires après le transfert.</div>
-    <div class="how-economy">Économie : 35 fragments légendaires universels.</div>
-  </div>
-
   <section class="resource-bar">
     <div>
-      <div id="uiUniversalTitle" class="resource-title">Fragments légendaires universels disponibles</div>
-      <div id="uiUniversalHelp" class="resource-help">Saisissez votre stock avant de sélectionner vos héros.</div>
+      <div id="uiUniversalTitle" class="resource-title">Fragments légendaires universels</div>
+      <div id="uiUniversalHelp" class="resource-help">Saisissez le nombre de fragments légendaires universels disponibles dans votre sac.</div>
     </div>
     <div class="resource-input">
       <input id="universal" type="number" min="0" step="1" value="0" aria-label="Fragments légendaires universels disponibles">
-      <div id="uiUniversalNote" class="resource-note">Indiquez votre stock, même s’il est de 0.</div>
     </div>
   </section>
+
+  <div id="uiHowItWorks" class="how-it-works">
+    <strong>Principe :</strong> si des fragments dédiés sont disponibles, l’outil vous proposera d’améliorer votre héros avant le transfert afin de réduire au maximum la consommation de fragments légendaires universels.
+  </div>
 
   <main class="main-grid">
     <section class="panel gold-edge">
       <div class="panel-head">
         <div>
           <h2 id="uiDonorTitle">Héros utilisé pour le transfert</h2>
-          <div id="uiDonorSub" class="sub">Ajoutez jusqu’à 4 héros donneurs. Chaque ajout crée automatiquement le héros cible correspondant à droite.</div>
+          <div id="uiDonorSub" class="sub">Ajoutez jusqu’à 4 héros donneurs.</div>
         </div>
         <button id="addDonor" class="btn gold-outline" type="button">+ Ajouter</button>
       </div>
@@ -490,7 +412,7 @@
       <div class="panel-head">
         <div>
           <h2 id="uiReceiverTitle">Héros à développer</h2>
-          <div id="uiReceiverSub" class="sub">Les héros cibles sont ajoutés automatiquement en face des héros donneurs. Définissez ensuite leur priorité.</div>
+          <div id="uiReceiverSub" class="sub">Ajoutez jusqu’à 4 receveurs et définissez leur priorité.</div>
         </div>
         <button id="addReceiver" class="btn gold-outline" type="button">+ Ajouter</button>
       </div>
@@ -523,15 +445,14 @@
     fr: {
       title:'Héritage héroïque',
       subtitle:'Optimisez vos transferts de héros et économisez vos fragments légendaires universels.',
-      universalTitle:'Fragments légendaires universels disponibles',
-      universalHelp:'Saisissez votre stock avant de sélectionner vos héros.',
-      universalNote:'Indiquez votre stock, même s’il est de 0.',
+      universalTitle:'Fragments légendaires universels',
+      universalHelp:'Saisissez le nombre de fragments légendaires universels disponibles dans votre sac.',
       universalAria:'Fragments légendaires universels disponibles',
-      howItWorks:'<span class="how-title">Explications</span><div class="how-line">Seules les compétences déjà acquises sont transférées.</div><div class="how-line">Si vous disposez de fragments dédiés au héros dont vous souhaitez transférer les compétences, utilisez-les avant le transfert. Vous pouvez compléter si nécessaire avec des fragments légendaires universels.</div><div class="how-line">Utiliser les fragments dédiés avant le transfert permet d’économiser des fragments légendaires universels.</div><div class="how-example">Exemple : pour une amélioration coûtant 80 fragments, si vous avez 35 fragments dédiés, utilisez 35 dédiés + 45 légendaires au lieu de 80 fragments légendaires après le transfert.</div><div class="how-economy">Économie : 35 fragments légendaires universels.</div>',
+      howItWorks:'<strong>Principe :</strong> si des fragments dédiés sont disponibles, l’outil vous proposera d’améliorer votre héros avant le transfert afin de réduire au maximum la consommation de fragments légendaires universels.',
       donorTitle:'Héros utilisé pour le transfert',
-      donorSub:'Ajoutez jusqu’à 4 héros donneurs. Chaque ajout crée automatiquement le héros cible correspondant à droite.',
+      donorSub:'Ajoutez jusqu’à 4 héros donneurs.',
       receiverTitle:'Héros à développer',
-      receiverSub:'Les héros cibles sont ajoutés automatiquement en face des héros donneurs. Définissez ensuite leur priorité.',
+      receiverSub:'Ajoutez jusqu’à 4 receveurs et définissez leur priorité.',
       add:'+ Ajouter',
       legendaryHero:'Héros légendaire',
       sHero:'Héros S',
@@ -565,7 +486,6 @@
       result:'Résultat',
       universalsUsed:'Universels utilisés :',
       donorReset:'Donneur remis à 1-1-1-1',
-      levelReachedTransfer:'Niveau atteint grâce au transfert :',
       transferTitle:'Optimiser les transferts',
       actionGuideTitle:'Actions à effectuer dans le jeu',
       donorAction:'Avant le transfert : sur {hero}, passez de {from} à {to} en utilisant {cost}.',
@@ -580,15 +500,14 @@
     en: {
       title:'Heroic Legacy',
       subtitle:'Optimize your hero transfers and save your universal Legendary Fragments.',
-      universalTitle:'Universal Legendary Fragments available',
-      universalHelp:'Enter your stock before selecting your heroes.',
-      universalNote:'Enter your stock even if it is 0.',
+      universalTitle:'Universal Legendary Fragments',
+      universalHelp:'Enter the number of universal Legendary Fragments available in your inventory.',
       universalAria:'Universal Legendary Fragments available',
-      howItWorks:'<span class="how-title">Explanation</span><div class="how-line">Only skills already acquired are transferred.</div><div class="how-line">If you have dedicated fragments for the hero whose skills you want to transfer, use them before the transfer. You can top up with universal Legendary Fragments if needed.</div><div class="how-line">Using dedicated fragments before the transfer saves universal Legendary Fragments.</div><div class="how-example">Example: for an upgrade costing 80 fragments, if you have 35 dedicated fragments, use 35 dedicated + 45 universal instead of 80 universal Legendary Fragments after the transfer.</div><div class="how-economy">Saving: 35 universal Legendary Fragments.</div>',
+      howItWorks:'<strong>How it works:</strong> if dedicated fragments are available, the tool will suggest upgrading your hero before the transfer in order to minimize the use of universal Legendary Fragments.',
       donorTitle:'Hero used for the transfer',
-      donorSub:'Add up to 4 donor heroes. Each addition automatically creates the matching target hero on the right.',
+      donorSub:'Add up to 4 donor heroes.',
       receiverTitle:'Hero to develop',
-      receiverSub:'Target heroes are added automatically opposite the donor heroes. Then set their priority.',
+      receiverSub:'Add up to 4 receiving heroes and set their priority.',
       add:'+ Add',
       legendaryHero:'Legendary Hero',
       sHero:'S Hero',
@@ -622,7 +541,6 @@
       result:'Result',
       universalsUsed:'Universal fragments used:',
       donorReset:'Donor reset to 1-1-1-1',
-      levelReachedTransfer:'Level reached through the transfer:',
       transferTitle:'Optimize transfers',
       actionGuideTitle:'Actions to perform in the game',
       donorAction:'Before the transfer: on {hero}, upgrade from {from} to {to} using {cost}.',
@@ -667,51 +585,17 @@
     return [1,2,3,4,5].map(n => `<option value="${n}" ${Number(v)===n?'selected':''}>${n}</option>`).join('');
   }
 
-  function syncPairHeights() {
-    const donors = [...donorsEl.querySelectorAll('.card')];
-    const receivers = [...receiversEl.querySelectorAll('.card')];
-
-    [...donors, ...receivers].forEach(card => {
-      card.style.minHeight = '';
-      card.classList.add('paired-height');
-    });
-
-    const count = Math.min(donors.length, receivers.length);
-    for (let i = 0; i < count; i++) {
-      const h = Math.max(donors[i].scrollHeight, receivers[i].scrollHeight);
-      donors[i].style.minHeight = `${h}px`;
-      receivers[i].style.minHeight = `${h}px`;
-    }
-  }
-
   function syncButtons() {
-    const maxed = Math.max(donorsEl.children.length, receiversEl.children.length) >= 4;
-    addDonorBtn.disabled = maxed;
-    addReceiverBtn.disabled = maxed;
-    requestAnimationFrame(syncPairHeights);
-  }
-
-  function addTransferPair() {
-    if (Math.max(donorsEl.children.length, receiversEl.children.length) >= 4) return;
-
-    // Complete a missing card first if one side was previously removed.
-    if (donorsEl.children.length < receiversEl.children.length) {
-      makeCard('donor');
-    } else if (receiversEl.children.length < donorsEl.children.length) {
-      makeCard('receiver');
-    } else {
-      makeCard('donor');
-      makeCard('receiver');
-    }
-    requestAnimationFrame(syncPairHeights);
+    addDonorBtn.disabled = donorsEl.children.length >= 4;
+    addReceiverBtn.disabled = receiversEl.children.length >= 4;
   }
 
   function snapshotCards(kind) {
     const host = kind === 'receiver' ? receiversEl : donorsEl;
     return [...host.querySelectorAll('.card')].map(card => ({
       hero: card.querySelector('.hero-legendary').value || card.querySelector('.hero-s').value,
-      skills: kind === 'receiver' ? [1,1,1,1] : [...card.querySelectorAll('.skill')].map(s => Number(s.value)),
-      dedicated: kind === 'receiver' ? 0 : Math.max(0, Math.floor(Number(card.querySelector('.dedicated').value)||0)),
+      skills: [...card.querySelectorAll('.skill')].map(s => Number(s.value)),
+      dedicated: Math.max(0, Math.floor(Number(card.querySelector('.dedicated').value)||0)),
       priority: kind === 'receiver' ? Number(card.querySelector('.priority').value) : null
     }));
   }
@@ -748,33 +632,30 @@
 
       <div class="warning hidden">${t('sWarning')}</div>
 
-      ${isReceiver ? `
-        <div class="data-grid receiver receiver-simple">
+      <div class="data-grid ${isReceiver?'receiver':'donor'}">
+        <div class="data-box">
+          <div class="data-label">${t('skills')}</div>
+          <div class="skills">
+            ${skills.map((v,i)=>`
+              <label class="skill-label">C${i+1}
+                <select class="skill">${skillOptions(v)}</select>
+              </label>`).join('')}
+          </div>
+        </div>
+
+        <div class="data-box goldish">
+          <div class="data-label">${t('dedicated')}</div>
+          <input class="dedicated" type="number" min="0" step="1" value="${Math.max(0,Number(data.dedicated||0))}">
+        </div>
+
+        ${isReceiver ? `
           <div class="data-box goldish">
             <div class="data-label">${t('priority')}</div>
             <select class="priority">
               ${[1,2,3,4].map(p=>`<option value="${p}" ${p===(data.priority||defaultPriority)?'selected':''}>${p}</option>`).join('')}
             </select>
-          </div>
-        </div>
-      ` : `
-        <div class="data-grid donor">
-          <div class="data-box">
-            <div class="data-label">${t('skills')}</div>
-            <div class="skills">
-              ${skills.map((v,i)=>`
-                <label class="skill-label">C${i+1}
-                  <select class="skill">${skillOptions(v)}</select>
-                </label>`).join('')}
-            </div>
-          </div>
-
-          <div class="data-box goldish">
-            <div class="data-label">${t('dedicated')}</div>
-            <input class="dedicated" type="number" min="0" step="1" value="${Math.max(0,Number(data.dedicated||0))}">
-          </div>
-        </div>
-      `}
+          </div>` : ''}
+      </div>
     `;
 
     host.appendChild(card);
@@ -814,7 +695,6 @@
 
     refreshWarning();
     syncButtons();
-    requestAnimationFrame(syncPairHeights);
   }
 
   const progress = skills => skills.reduce((sum,v)=>sum+(Number(v)-1),0);
@@ -994,10 +874,11 @@
             </div>
 
             <div class="result-box">
-              <strong>${esc(s.receiver.hero)}</strong>
-              <div style="margin-top:8px;font-size:1rem">
-                ${t('levelReachedTransfer')} <strong>${skillText(s.transferSkills)}</strong>
-              </div>
+              <strong>${t('after')} — ${esc(s.receiver.hero)}</strong>
+              <div class="small" style="margin-top:7px">${fmt(t('oldAbsorbed'),{x:skillText(s.receiver.skills)})}</div>
+              <div style="margin-top:4px;font-size:1rem">${skillText(s.transferSkills)} → <strong>${skillText(s.finalSkills)}</strong></div>
+              <div class="small" style="margin-top:8px">${s.receiverDedUsed} ${t('dedicatedUsed')}${s.uniPost?` + ${s.uniPost} ${t('universalShort')}`:''}</div>
+              <div class="small">${t('dedicatedRemaining')} ${receiverRemain}</div>
             </div>
           </div>
 
@@ -1017,6 +898,17 @@
             <div class="action-step">
               <span class="step-no">2</span>
               <div>${fmt(t('doTransfer'), {donor: esc(s.donor.hero), receiver: esc(s.receiver.hero)})}</div>
+            </div>
+            <div class="action-step">
+              <span class="step-no">3</span>
+              <div>${skillText(s.transferSkills) !== skillText(s.finalSkills)
+                ? fmt(t('receiverAction'), {
+                    hero: esc(s.receiver.hero),
+                    from: skillText(s.transferSkills),
+                    to: skillText(s.finalSkills),
+                    cost: costText(s.receiverDedUsed, s.uniPost)
+                  })
+                : fmt(t('receiverNoAction'), {hero: esc(s.receiver.hero)})}</div>
             </div>
           </div>
 
@@ -1050,7 +942,6 @@
     document.getElementById('uiSubtitle').textContent = t('subtitle');
     document.getElementById('uiUniversalTitle').textContent = t('universalTitle');
     document.getElementById('uiUniversalHelp').textContent = t('universalHelp');
-    document.getElementById('uiUniversalNote').textContent = t('universalNote');
     document.getElementById('uiHowItWorks').innerHTML = t('howItWorks');
     universalEl.setAttribute('aria-label', t('universalAria'));
     document.getElementById('uiDonorTitle').textContent = t('donorTitle');
@@ -1123,9 +1014,8 @@
     messageEl.textContent = fmt(t('calculationDone'),{n:plan.transfers,u:plan.totalUni});
   }
 
-  addDonorBtn.addEventListener('click', addTransferPair);
-  addReceiverBtn.addEventListener('click', addTransferPair);
-  window.addEventListener('resize', () => requestAnimationFrame(syncPairHeights));
+  addDonorBtn.addEventListener('click',()=>makeCard('donor'));
+  addReceiverBtn.addEventListener('click',()=>makeCard('receiver'));
   optimizeBtn.addEventListener('click',runOptimize);
   medallionOptimizeBtn.addEventListener('click',runOptimize);
 
